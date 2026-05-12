@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<!-- Page détail d'un véhicule : données complétées via JavaScript et le stockage local -->
+<html lang="fr">
+<!-- Métadonnées, polices et styles communs avec la page d'accueil -->
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="DriveRent - Détail de voiture">
+  <title>DriveRent | Car Detail</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+<!-- Fin : en-tête du document -->
+</head>
+<!-- Corps : même habillage visuel que l'accueil -->
+<body>
+  <!-- Début : halos d'arrière-plan décoratifs -->
+  <div class="bg-glow bg-glow-top"></div>
+  <div class="bg-glow bg-glow-mid"></div>
+  <div class="bg-glow bg-glow-bottom"></div>
+  <!-- Fin : halos d'arrière-plan -->
+
+  <!-- Début : conteneur principal de la page -->
+  <div class="page-wrap">
+    <!-- Début : menu rapide (retour vers les sections de l'accueil) -->
+    <div class="quick-menu glass-card" id="quickMenu">
+      <button class="quick-menu-toggle" id="quickMenuToggle" type="button" aria-label="Ouvrir le menu">
+        <span></span><span></span><span></span>
+      </button>
+      <div class="quick-menu-panel hidden" id="quickMenuPanel">
+        <button type="button" data-target="accueil">Accueil</button>
+        <button type="button" data-target="voitures">Voitures</button>
+        <button type="button" data-target="contact">Contact</button>
+        <button type="button" data-target="reservation">Réserver</button>
+      </div>
+    </div>
+    <!-- Fin : menu rapide -->
+
+    <!-- Début : en-tête avec liens vers index.html et ancres -->
+    <header class="site-header">
+      <a href="#accueil" class="logo">
+  <img src="images/logo..png" alt="DriveRent">
+</a>
+      <nav class="nav-links" aria-label="Navigation principale">
+        <a href="index.html#accueil">Accueil</a>
+        <a href="index.html#voitures">Voitures</a>
+        <a href="index.html#contact">Contact</a>
+        <a href="index.html#reservation">Réserver</a>
+      </nav>
+    </header>
+    <!-- Fin : en-tête -->
+
+    <!-- Début : section détail (galerie + fiche informations + lien réservation) -->
+    <section class="section" id="detail" aria-labelledby="detail-title">
+      <h2 class="section-badge1" id="detail-title">Car detail</h2>
+
+      <div class="detail-grid">
+        <div class="detail-gallery">
+          <div class="detail-main glass-card">
+            <img
+              id="mainDetailImage"
+              src="images/toyota.png"
+              alt="Image principale du véhicule"
+            >
+          </div>
+
+          <div class="thumb-row" id="detailThumbRow"></div>
+        </div>
+
+        <article class="detail-info glass-card">
+          <h3>information</h3>
+          <h4 id="detailCarName">TOYOTA LAND CRUISER</h4>
+          <p><span>Prix</span> <span id="detailCarPrice">1,500 MAD / jour</span></p>
+          <p><span>Transmission</span> <span id="detailCarTransmission">Automatique</span></p>
+          <p><span>Spécifications</span> <span id="detailCarSpecs">V8 / 7 places / 4x4</span></p>
+          <p class="detail-description" id="detailCarDescription">
+            Description<br>
+            SUV robuste pour trajets urbains et longs parcours avec un confort premium.
+          </p>
+          <a class="btn btn-primary btn-wide1" id="detailReserveBtn" href="index.html#reservation">Réservation</a>
+        </article>
+      </div>
+    </section>
+    <!-- Fin : section détail véhicule -->
+  <!-- Fin : conteneur principal -->
+  </div>
+
+  <!-- Message flash (retours formulaire / actions, géré en JS si présent) -->
+  <div id="statusToast" class="status-toast hidden" role="status" aria-live="polite"></div>
+  <!-- Script partagé avec l'accueil : menu, page détail, réservation -->
+  <script src="script.js"></script>
+<!-- Fin : corps -->
+</body>
+</html>

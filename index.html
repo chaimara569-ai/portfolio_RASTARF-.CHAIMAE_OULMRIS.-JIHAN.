@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<!-- Page d'accueil : structure globale du site DriveRent -->
+<html lang="fr">
+<!-- En-tête du document : métadonnées, polices et feuille de style principale -->
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="DriveRent - Location de voitures simple et rapide">
+  <title>DriveRent | Location de voitures</title>
+
+  <!-- Google Font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Main stylesheet -->
+  <link rel="stylesheet" href="style.css">
+<!-- Fin : en-tête du document -->
+</head>
+<!-- Corps : tout le contenu visible par l'utilisateur -->
+<body>
+  <!-- Début : halos lumineux en arrière-plan (effet visuel, non interactifs) -->
+  <div class="bg-glow bg-glow-top"></div>
+  <div class="bg-glow bg-glow-mid"></div>
+  <div class="bg-glow bg-glow-bottom"></div>
+  <!-- Fin : halos d'arrière-plan -->
+  <!-- Début : conteneur centré de la page (largeur max + marges) -->
+  <div class="page-wrap">
+    <!-- Début : menu rapide flottant (burger + liens vers les sections) -->
+    <div class="quick-menu glass-card" id="quickMenu">
+      <button class="quick-menu-toggle" id="quickMenuToggle" type="button" aria-label="Ouvrir le menu">
+        <span></span><span></span><span></span>
+      </button>
+      <div class="quick-menu-panel hidden" id="quickMenuPanel">
+        <button type="button" data-target="accueil">Accueil</button>
+        <button type="button" data-target="voitures">Voitures</button>
+        <button type="button" data-target="contact">Contact</button>
+        <button type="button" data-target="reservation">Réserver</button>
+      </div>
+    </div>
+    <!-- Fin : menu rapide flottant -->
+
+    <!-- Début : zone principale regroupant les sections du site -->
+    <div id="main-content">
+    <!-- ================= Header / Hero ================= -->
+    <!-- Début : barre de navigation fixe (logo + liens d'ancrage) -->
+    <header class="site-header" id="accueil">
+      <a href="#accueil" class="logo">
+  <img src="images/logo..png" alt="DriveRent">
+</a>
+      <nav class="nav-links" aria-label="Navigation principale">
+        <a href="#accueil">Accueil</a>
+        <a href="#contact">Contact</a>
+        <a href="#voitures">Voitures</a>
+        <a href="#reservation">Réserver</a>
+      </nav>
+    </header>
+    <!-- Fin : barre de navigation -->
+
+    <!-- Début : section Hero (accroche, image mise en avant, formulaire de recherche rapide) -->
+    <section class="hero-section" aria-labelledby="hero-title">
+      <div class="hero-content">
+        <h1 id="hero-title" class="hero-title-animate"> LOCATION DE VOITURES DE LUXE</h1>
+        <link href="https://fonts.googleapis.com/css2?family=Chonburi&family=Abril+Fatface&display=swap" rel="stylesheet">
+      </div>
+
+      <div class="hero-image-wrap">
+        <img
+          class="hero-car hero-car-animate"
+          src="images/range rover.png"
+          alt="SUV premium de location DriveRent"
+        >
+      </div>
+
+      <form class="search-bar glass-card search1" id="searchForm" aria-label="Formulaire de recherche">
+        <div class="field with-icon">
+          <span class="icon" aria-hidden="true">📍</span>
+          <input type="text" name="ville" placeholder="Ville" aria-label="Ville">
+        </div>
+        <div class="field date-group">
+          <input type="text" name="dd" maxlength="2" placeholder="DD" aria-label="Jour">
+          <input type="text" name="mm" maxlength="2" placeholder="MM" aria-label="Mois">
+          <input type="text" name="yyyy" maxlength="4" placeholder="YYYY" aria-label="Année">
+        </div>
+        <div class="field">
+          <input type="text" name="type" placeholder="Type de voiture" aria-label="Type de voiture">
+        </div>
+        
+        <a href="#reservation" class="btn btn-primary">Réserver</a>
+      </form>
+    </section>
+    <!-- Fin : section Hero -->
+
+    <!-- ================= Cars Grid ================= -->
+    <!-- Début : catalogue / grille des voitures disponibles à la location -->
+    <section class="section" id="voitures" aria-labelledby="cars-title">
+      <h2 class="section-badge" id="cars-title">Voitures</h2>
+
+      <div class="cars-grid">
+        <article
+          class="car-card glass-card" 
+          data-name="TOYOTA LAND CRUISER"
+          data-price="1,500 MAD / jour"
+          data-transmission="Automatique"
+          data-specs="V8 / 7 places / 4x4"
+          data-description="SUV robuste pour trajets urbains et longs parcours avec un confort premium."
+          data-image="images/toyota.png"
+        >
+          <img src="images/toyota.png" alt="Toyota Land Cruiser">
+          <h3>TOYOTA LAND CRUISER</h3>
+          <p><span>Prix:</span> 1,500 MAD / <small>jour</small></p>
+          <p><span>Transmission:</span> Automatique</p>
+          <button class="btn btn-outline car-detail-trigger" type="button">voir détail</button>
+        </article>
+
+        <article
+          class="car-card glass-card"
+          data-name="MERCEDES-BENZ GLE"
+          data-price="2,200 MAD / jour"
+          data-transmission="Automatique"
+          data-specs="429 ch / Turbo 6 cylindres"
+          data-description="Une transmission ultra-rapide et intelligente pour un confort de conduite inégalé et une réactivité sportive."
+          data-image="https://images.unsplash.com/photo-1617654112368-307921291f42?auto=format&fit=crop&w=1100&q=80"
+        >
+          <img src="images/png4.png" alt="Mercedes-Benz GLE">
+          <h3>MERCEDES-BENZ GLE</h3>
+          <p><span>Prix:</span> 2,200 MAD / <small>jour</small></p>
+          <p><span>Transmission:</span> Automatique</p>
+          <button class="btn btn-outline car-detail-trigger" type="button">voir détail</button>
+        </article>
+
+        <article
+          class="car-card glass-card"
+          data-name="DACIA DUSTER"
+          data-price="400 MAD / jour"
+          data-transmission="Manuelle"
+          data-specs="SUV compact / 5 places"
+          data-description="Idéale pour une location économique avec un excellent compromis confort et consommation."
+          data-image="https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=1100&q=80"
+        >
+          <img src="images/dacia.png" alt="Dacia Duster">
+          <h3>DACIA DUSTER</h3>
+          <p><span>Prix:</span> 400 MAD / <small>jour</small></p>
+          <p><span>Transmission:</span> Manuelle</p>
+          <button class="btn btn-outline car-detail-trigger" type="button">voir détail</button>
+        </article>
+
+        <article
+          class="car-card glass-card"
+          data-name="BMW X6"
+          data-price="2,500 MAD / jour"
+          data-transmission="Automatique"
+          data-specs="400 ch / SUV coupé"
+          data-description="Design dynamique et conduite sportive pour une expérience haut de gamme."
+          data-image="https://images.unsplash.com/photo-1618843479313-40f8afb4b4d8?auto=format&fit=crop&w=1100&q=80"
+        >
+          <img src="images/BMW1.png" alt="BMW X6">
+          <h3>BMW X6</h3>
+          <p><span>Prix:</span> 2,500 MAD / <small>jour</small></p>
+          <p><span>Transmission:</span> Automatique</p>
+          <button class="btn btn-outline car-detail-trigger" type="button">voir détail</button>
+        </article>
+
+        <article
+          class="car-card glass-card"
+          data-name="VOLKSWAGEN TIGUAN"
+          data-price="800 MAD / jour"
+          data-transmission="Automatique"
+          data-specs="SUV familial / 5 places"
+          data-description="Polyvalent et fiable, parfait pour les familles et les déplacements quotidiens."
+          data-image="https://images.unsplash.com/photo-1617469767053-d3b523a0b982?auto=format&fit=crop&w=1100&q=80"
+        >
+          <img src="images/tiguan.png" alt="Volkswagen Tiguan">
+          <h3>VOLKSWAGEN TIGUAN</h3>
+          <p><span>Prix:</span> 800 MAD / <small>jour</small></p>
+          <p><span>Transmission:</span> Automatique</p>
+          <button class="btn btn-outline car-detail-trigger" type="button">voir détail</button>
+        </article>
+
+        <article
+          class="car-card glass-card"
+          data-name="BENTLEY BENTAYGA"
+          data-price="8,500 MAD / jour"
+          data-transmission="Automatique"
+          data-specs="W12 / ultra-luxe"
+          data-description="Le summum du luxe avec des finitions exclusives et un confort exceptionnel."
+          data-image="https://images.unsplash.com/photo-1580273916550-e323be2ae537?auto=format&fit=crop&w=1100&q=80"
+        >
+          <img src="images/bentely.png" alt="Bentley Bentayga">
+          <h3>BENTLEY BENTAYGA</h3>
+          <p><span>Prix:</span> 8,500 MAD / <small>jour</small></p>
+          <p><span>Transmission:</span> Automatique</p>
+          <button class="btn btn-outline car-detail-trigger" type="button">voir détail</button>
+        </article>
+
+        <article
+          class="car-card glass-card"
+          data-name="CLIO"
+          data-price="350 MAD / jour"
+          data-transmission="Automatique"
+          data-specs="Citadine / 5 places"
+          data-description="Citadine agile et économique, idéale pour la conduite en ville."
+          data-image="https://images.unsplash.com/photo-1493238792000-8113da705763?auto=format&fit=crop&w=1100&q=80"
+        >
+          <img src="images/clio.png" alt="Renault Clio">
+          <h3>CLIO</h3>
+          <p><span>Prix:</span> 350 MAD / <small>jour</small></p>
+          <p><span>Transmission:</span> Automatique</p>
+          <button class="btn btn-outline car-detail-trigger" type="button">voir détail</button>
+        </article>
+
+        <article
+          class="car-card glass-card"
+          data-name="RENAULT SYMBOL"
+          data-price="300 MAD / jour"
+          data-transmission="Manuelle"
+          data-specs="Berline compacte"
+          data-description="Option pratique et économique pour un usage quotidien."
+          data-image="https://images.unsplash.com/photo-1563720223185-11003d516935?auto=format&fit=crop&w=1100&q=80"
+        >
+          <img src="images/renault symbol.png" alt="Renault Symbol">
+          <h3>RENAULT SYMBOL</h3>
+          <p><span>Prix:</span> 300 MAD / <small>jour</small></p>
+          <p><span>Transmission:</span> Manuelle</p>
+          <button class="btn btn-outline car-detail-trigger" type="button">voir détail</button>
+        </article>
+
+        <article
+          class="car-card glass-card"
+          data-name="SKODA KAROQ"
+          data-price="600 MAD / jour"
+          data-transmission="Automatique"
+          data-specs="SUV / 5 places"
+          data-description="SUV confortable avec une très bonne tenue de route pour tous les trajets."
+          data-image="https://images.unsplash.com/photo-1550355291-bbee04a92027?auto=format&fit=crop&w=1100&q=80"
+        >
+          <img src="images/skoda.png" alt="Skoda Karoq">
+          <h3>SKODA KAROQ</h3>
+          <p><span>Prix:</span> 600 MAD / <small>jour</small></p>
+          <p><span>Transmission:</span> Automatique</p>
+          <button class="btn btn-outline car-detail-trigger" type="button">voir détail</button>
+        </article>
+      </div>
+    </section>
+    <!-- Fin : catalogue des voitures -->
+
+    <!-- ================= Contact ================= -->
+    <!-- Début : section Contact (coordonnées, formulaire message, carte) -->
+    <section class="section" id="contact" aria-labelledby="contact-title">
+      <h2 class="section-badge" id="contact-title">Contact</h2>
+
+      <div class="contact-grid">
+        <div class="contact-left">
+          <p class="intro-text">
+            Besoin d'aide ? Notre équipe est là pour vous aider.
+            Contactez-nous via le formulaire ou par téléphone.
+          </p>
+
+          <div class="info-list">
+            <article class="info-card glass-card">
+              <img src="imgindex/telephone.png" class="info-icon">
+              <div>
+                <h4>Phone</h4>
+                <p>+2126-6666-6666</p>
+              </div>
+            </article>
+
+            <article class="info-card glass-card">
+              <img src="imgindex/at-sign.png"class="info-icon">
+              <div>
+                <h4>E-mail</h4>
+                <p>@DriveRent@gmail.com</p>
+              </div>
+            </article>
+
+            <article class="info-card glass-card">
+              <img src="imgindex/site.png"class="info-icon">
+              <div>
+                <h4>Office</h4>
+                <p>DriveRent location</p>
+              </div>
+            </article>
+          </div>
+        </div>
+
+        <div class="contact-right">
+          <form class="message-form glass-card" id="messageForm">
+            <div>
+            <img src="imgindex/chat.png" class=" info1">
+            <h3>Message</h3></div class="info1">
+            <input type="text" name="name" placeholder="Nom..." required>
+            <input type="email" name="email" placeholder="E-mail..." required>
+            <textarea name="message" placeholder="Message..." required></textarea>
+            <button type="submit" class="btn btn-secondary">envoyer</button>
+          
+          </form>
+
+          <div class="map-box glass-card" aria-label="Carte de localisation Agadir">
+            <iframe
+              title="Google Map Agadir"
+              src="https://www.google.com/maps?q=Agadir,+Morocco&output=embed"
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"
+            ></iframe>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Fin : section Contact -->
+
+    <!-- ================= Reservation ================= -->
+    <!-- Début : section Réservation (formulaire + aperçu du véhicule + encadré confiance) -->
+    <section class="section" id="reservation" aria-labelledby="reservation-title">
+      <h2 class="section-badge" id="reservation-title">Réserver</h2>
+
+      <div class="reservation-wrap glass-card">
+        <form class="reservation-form" id="reservationForm">
+          <div class="form-row">
+            <div class="input-group">
+              <label for="fullName">Nom Complet</label>
+              <input id="fullName" name="fullName" type="text" placeholder="Nom..." required>
+            </div>
+            <div class="input-group">
+              <label for="startDate">Date de Début</label>
+              <input id="startDate" name="startDate" type="text" placeholder="DD/MM/YYYY" required>
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="input-group">
+              <label for="phone">Numéro de Téléphone</label>
+              <input id="phone" name="phone" type="text" placeholder="+2126 6666 6666" required>
+            </div>
+            <div class="input-group">
+              <label for="endDate">Date de Fin</label>
+              <input id="endDate" name="endDate" type="text" placeholder="DD/MM/YYYY" required>
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="input-group">
+              <label for="email">Adresse E-mail</label>
+              <input id="email" name="email" type="email" placeholder="E-mail..." required>
+            </div>
+            <div class="input-group">
+              <label for="pickup">Lieu de Prise en Charge</label>
+              <input id="pickup" name="pickup" type="text" placeholder="Ville..." required>
+            </div>
+          </div>
+
+          <button type="submit" class="btn btn-primary btn-wide">Réservation</button>
+        </form>
+
+        <aside class="reservation-side">
+          <div class="reservation-preview glass-card" id="reservationPreview">
+            <p class="preview-label">Vous avez choisi :</p>
+            <div class="preview-content" id="reservationPreviewContent">
+              
+              <p class="preview-empty">Veuillez choisir une voiture</p>
+            </div>
+          </div>
+          
+          <div class="reservation-security glass-card">
+            <h3>Réservation Sécurisée</h3>
+            <ul>
+              <li>Annulation gratuite jusqu'à 24h.</li>
+              <li>Assurance incluse.</li>
+              <li>Aucun frais cachés.</li>
+              <li>Support 24h/7j.</li>
+            </ul>
+          </div>
+        </aside>
+      </div>
+    </section>
+    <!-- Fin : section Réservation -->
+
+    <!-- ================= Testimonials ================= -->
+    <!-- Début : témoignages / avis clients (cartes + bouton d'appel à l'action) -->
+    <section class="section section-testimonials" id="avis" aria-labelledby="reviews-title">
+      <h2 class="section-badge">Avis des clients</h2>
+      <h3 class="testimonial-title" id="reviews-title">CE QUE NOS CLIENTS DISENT</h3>
+
+      <div class="testimonial-row">
+        <article class="testimonial-card glass-card">
+          <p class="stars">★★★★★</p>
+          <p>Une expérience inoubliable avec la Range Rover ! Service réactif et impeccable.</p>
+          <div class="testimonial-user">
+            <span>Pierre L.</span>
+            <img src="https://i.pravatar.cc/100?img=12" alt="Avatar Pierre">
+          </div>
+        </article>
+
+        <article class="testimonial-card glass-card">
+          <p class="stars">★★★★★</p>
+          <p>La Tesla Model S était incroyable. Conduite fluide et application intuitive.</p>
+          <div class="testimonial-user">
+            <span>Sophie G.</span>
+            <img src="https://i.pravatar.cc/100?img=32" alt="Avatar Sophie">
+          </div>
+        </article>
+
+        <article class="testimonial-card glass-card">
+          <p class="stars">★★★★★</p>
+          <p>Location sans stress ! Véhicule propre et performant, je recommande fortement.</p>
+          <div class="testimonial-user">
+            <span>Marc A.</span>
+            <img src="https://i.pravatar.cc/100?img=15" alt="Avatar Marc">
+          </div>
+        </article>
+      </div>
+
+      <button class="btn btn-secondary btn-cta" type="button">RÉSERVER MAINTENANT</button>
+    </section>
+    <!-- Fin : témoignages clients -->
+
+    <!-- ================= Feedback ================= -->
+    <!-- Début : formulaire pour laisser un avis (note + message) -->
+    <section class="section" id="feedback" aria-labelledby="feedback-title">
+      <h2 class="section-badge" id="feedback-title">Laissez votre avis</h2>
+      <form class="feedback-form glass-card" id="feedbackForm">
+        <div class="form-row">
+          <div class="input-group">
+            <label for="feedbackName">Nom</label>
+            <input id="feedbackName" name="feedbackName" type="text" placeholder="Votre nom..." required>
+          </div>
+          <div class="input-group">
+            <label for="feedbackRating">Note</label>
+            <select id="feedbackRating" name="feedbackRating" required>
+              <option value="">Choisir une note</option>
+              <option value="1">1 étoile</option>
+              <option value="2">2 étoiles</option>
+              <option value="3">3 étoiles</option>
+              <option value="4">4 étoiles</option>
+              <option value="5">5 étoiles</option>
+            </select>
+          </div>
+        </div>
+        <div class="input-group">
+          <label for="feedbackMessage">Message</label>
+          <textarea id="feedbackMessage" name="feedbackMessage" placeholder="Partagez votre expérience..." required></textarea>
+        </div>
+        <button type="submit" class="btn btn-secondary">Envoyer mon avis</button>
+      </form>
+    </section>
+    <!-- Fin : formulaire d'avis -->
+    <!-- Fin : zone principale (#main-content) -->
+    </div>
+  <!-- Fin : conteneur page (.page-wrap) -->
+  </div>
+
+  <!-- Notification temporaire (messages de succès après envoi de formulaire, gérée en JS) -->
+  <div id="statusToast" class="status-toast hidden" role="status" aria-live="polite"></div>
+
+  <!-- Main script -->
+  <!-- Script principal : interactions (menus, formulaires, page détail, prévisualisation réservation) -->
+  <script src="script.js"></script>
+<!-- Fin : corps du document -->
+</body>
+</html>
